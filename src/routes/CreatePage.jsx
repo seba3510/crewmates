@@ -61,13 +61,20 @@ function CreatePage() {
 
 	//===================================================================================
 
-	function checkSpeed(value) {
+	function checkSpeed(speed) {
 
 		const pattern =
-			/(\d)+/;
+			/([0-9]+)/
+
+		const value =
+			speed
+				.value
+				.trim();
 
 		const doesPatternMatch =
-			pattern.test(value);
+			pattern.test(
+				value
+			);
 
 		if (!doesPatternMatch) {
 
@@ -85,6 +92,65 @@ function CreatePage() {
 
 	//===================================================================================
 
+	function checkName(name) {
+
+		const value =
+			name
+				.value
+				.trim();
+
+		const isValid =
+			(value !== "");
+
+		if (!isValid) {
+
+			const message =
+				"Please enter the name " +
+				"of the crewmate.";
+
+			throw new Error(message);
+
+		} // if
+
+		return true;
+
+	} // checkName()
+
+	//===================================================================================
+
+	function checkColor(colors) {
+
+		let isSelected = false;
+
+		colors.forEach((color) => {
+
+			const isColorSelected =
+				(color.checked);
+
+			if (isColorSelected) {
+
+				isSelected =
+					true;
+
+			} // if
+
+		}); // forEach()
+
+		if (!isSelected) {
+
+			const message =
+				"Please select a color.";
+
+			throw new Error(message);
+
+		} // if
+
+		return true;
+
+	} // checkColor()
+
+	//===================================================================================
+
 	async function createCrewmate(event) {
 
 		try {
@@ -94,25 +160,67 @@ function CreatePage() {
 			const target =
 				event.target;
 
+			const isName =
+				(target[0].name ===
+					"crewmate_name");
+
 			const isSpeed =
-				target.name === "crewmate_speed";
+				(target[1].name ===
+					"crewmate_speed");
 
-			if (isSpeed) {
+			const colors =
+				[
+					target[3],
+					target[4],
+					target[5],
+					target[6],
+					target[7],
+					target[8],
+					target[9],
+					target[10]
+				];
 
-				checkSpeed(target);
+			if (isName) {
+
+				checkName(
+					target[0]
+				);
 
 			} // if
 
+			else if (isSpeed) {
+
+				checkSpeed(
+					target[1]
+				);
+
+			} // else if
+
+			else {
+
+				checkColor(
+					colors
+				);
+
+			} // else
+
+			const isNameValid =
+				(checkName(target[0]));
+
 			const isSpeedValid =
-				(checkSpeed(target));
+				(checkSpeed(target[1]));
 
-			if (isSpeedValid) {
+			const isColorSelected =
+				(checkColor(colors));
 
-				console.log(`Name: ${crewmate.name}`);
+			const isDataValid =
+				(isNameValid) &&
+				(isSpeedValid) &&
+				(isColorSelected);
 
-				console.log(`Speed: ${parseFloat(crewmate.miles)}`);
+			if (isDataValid) {
 
-				console.log(`Color: ${crewmate.color}`);
+				alert("The form data is valid!");
 
 			} // if
 
