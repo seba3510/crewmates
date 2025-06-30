@@ -25,6 +25,10 @@ import { CreatePage } from "./routes/CreatePage.jsx";
 
 //=================================================================================
 
+import { CrewmateGallery } from "./routes/CrewmateGalley.jsx";
+
+//=================================================================================
+
 const root =
 	document.querySelector(
 		"#root"
@@ -49,6 +53,11 @@ createRoot(root).render(
 				<Route
 					path="create"
 					element={<CreatePage />}
+				/>
+
+				<Route
+					path="gallery"
+					element={<CrewmateGallery />}
 				/>
 
 

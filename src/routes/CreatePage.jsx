@@ -11,11 +11,111 @@ import crewmates
 
 //===================================================================================
 
+import { useState } from "react";
+
+//===================================================================================
+
+// import { supabase } from "../client.js";
+
+//===================================================================================
+
 function CreatePage() {
 
+	const [
+		crewmate,
+		setCrewmate
+	] =
+		useState({
+			name: "",
+			miles: 0.0,
+			color: ""
+		});
+
+	//===================================================================================
+
+	function handleInputChange(event) {
+
+		/*
+		* Extract "name" and "value" property of 
+		* input field, and create an object with those
+		* 2 properties.
+		*/
+		const {
+			name,
+			value
+		} = event.target;
+
+		/*
+		* Creates a Dictionary. The key of the 
+		* Dictionary is the name of the control, and the
+		* value is the value of the input field.
+		*/
+		setCrewmate((prev) => {
+			return {
+				...prev,
+				[name]: value
+			};
+		});
+
+	} // handleTextChange()
+
+	//===================================================================================
+
+	function checkSpeed(value) {
+
+
+	} // checkSpeed()
+
+	//===================================================================================
+
+	async function createCrewmate(event) {
+		try {
+
+			event.preventDefault();
+
+			const target =
+				event.target;
+
+			const isSpeed =
+				target.name === "crewmate_speed";
+
+			if (isSpeed) {
+
+				checkSpeed(target);
+
+			} // if
+
+			// await supabase
+			// .form("Crewmates")
+			// .insert({
+			// 	name: crewmate.name,
+			// 	miles: crewmate.miles,
+			// 	color: crewmate.color
+			// }).select();
+
+			console.log(`Name: ${crewmate.name}`);
+
+			console.log(`Speed: ${parseFloat(crewmate.miles)}`);
+
+			console.log(`Color: ${crewmate.color}`);
+
+			const x = 10;
+
+
+		} // try
+
+		catch (error) {
+
+			alert(error);
+
+		} // catch
+
+	} // createCrewmate()
+
+	//===================================================================================
+
+
 	return (
-
-
 
 		<>
 			<SideBar />
@@ -33,12 +133,12 @@ function CreatePage() {
 				</header>
 
 				<section id="form-container">
-					<form>
+					<form onSubmit={createCrewmate}>
 
 						<section id="cards">
 
 							<section className="card">
-								<label for="name">
+								<label htmlFor="name">
 									Name
 								</label>
 
@@ -47,12 +147,13 @@ function CreatePage() {
 									name="crewmate_name"
 									placeholder="Enter crewmate's name"
 									id="name"
+									onChange={handleInputChange}
 								/>
 							</section>
 
 							<section className="card">
 
-								<label for="speed">
+								<label htmlFor="speed">
 									Speed (mph)
 								</label>
 
@@ -61,6 +162,7 @@ function CreatePage() {
 									name="crewmate_speed"
 									placeholder="Enter speed in mph"
 									id="speed"
+									onChange={handleInputChange}
 								/>
 
 							</section>
@@ -77,9 +179,10 @@ function CreatePage() {
 											name="color"
 											value="Red"
 											id="red"
+											onChange={handleInputChange}
 										/>
 
-										<label for="red">
+										<label htmlFor="red">
 											Red
 										</label>
 									</div>
@@ -90,9 +193,10 @@ function CreatePage() {
 											name="color"
 											value="Green"
 											id="green"
+											onChange={handleInputChange}
 										/>
 
-										<label for="green">
+										<label htmlFor="green">
 											Green
 										</label>
 
@@ -104,9 +208,10 @@ function CreatePage() {
 											name="color"
 											value="Blue"
 											id="blue"
+											onChange={handleInputChange}
 										/>
 
-										<label for="blue">
+										<label htmlFor="blue">
 											Blue
 										</label>
 									</div>
@@ -117,9 +222,10 @@ function CreatePage() {
 											name="color"
 											value="Purple"
 											id="purple"
+											onChange={handleInputChange}
 										/>
 
-										<label for="purple">
+										<label htmlFor="purple">
 											Purple
 										</label>
 									</div>
@@ -130,9 +236,10 @@ function CreatePage() {
 											name="color"
 											value="Yellow"
 											id="yellow"
+											onChange={handleInputChange}
 										/>
 
-										<label for="yellow">
+										<label htmlFor="yellow">
 											Yellow
 										</label>
 									</div>
@@ -143,9 +250,10 @@ function CreatePage() {
 											name="color"
 											value="Orange"
 											id="orange"
+											onChange={handleInputChange}
 										/>
 
-										<label for="orange">
+										<label htmlFor="orange">
 											Orange
 										</label>
 									</div>
@@ -156,9 +264,10 @@ function CreatePage() {
 											name="color"
 											value="Pink"
 											id="pink"
+											onChange={handleInputChange}
 										/>
 
-										<label for="pink">
+										<label htmlFor="pink">
 											Pink
 										</label>
 									</div>
@@ -169,9 +278,10 @@ function CreatePage() {
 											name="color"
 											value="Rainbow"
 											id="rainbow"
+											onChange={handleInputChange}
 										/>
 
-										<label for="rainbow">
+										<label htmlFor="rainbow">
 											Rainbow
 										</label>
 									</div>
@@ -183,7 +293,7 @@ function CreatePage() {
 						</section>
 
 
-						<div id="btn-container">
+						<div className="btn-container">
 							<button
 								type="submit"
 							>

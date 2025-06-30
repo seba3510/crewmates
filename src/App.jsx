@@ -14,6 +14,9 @@ import spaceship from "./assets/images/home-page/Spaceship.webp"
 
 //===================================================================================
 
+import { Outlet } from "react-router-dom";
+
+//===================================================================================
 
 function App() {
 
@@ -50,6 +53,9 @@ function App() {
 						/>
 					</div>
 				</header>
+
+				{/* <Outlet /> */}
+
 			</main>
 
 		</>

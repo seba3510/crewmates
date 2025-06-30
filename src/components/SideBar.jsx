@@ -32,9 +32,9 @@ function SideBar() {
 						</li>
 
 						<li>
-							<a href="#">
+							<Link to="/gallery">
 								Crewmate Gallery
-							</a>
+							</Link>
 						</li>
 					</ul>
 
