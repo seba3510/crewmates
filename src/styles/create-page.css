@@ -1,0 +1,45 @@
+main header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+header > .image-container > img {
+	width: 50vw;
+}
+
+#form-container {
+	border: 5px solid blue;
+	padding: 2em;
+}
+
+#cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	border: 3px solid red;
+	padding: 2em auto 2em auto;
+	height: 300px;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #5b5a5a;
+	width: 30%;
+	min-height: 50%;
+	max-height: 100%;
+	padding: 1em;
+}
+
+#speed {
+	width: 80%;
+}
+
+#name {
+	width: 93%;
+}

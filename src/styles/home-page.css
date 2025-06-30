@@ -5,7 +5,7 @@ body {
 
 #root {
 	display: grid;
-	grid-template-columns: 200px 1fr;
+	grid-template-columns: minmax(100px, 250px) 1fr;
 	grid-template-rows: 100vh auto;
 	grid-template-areas: "sidebar main";
 }
@@ -16,7 +16,7 @@ body {
 	align-items: center;
 	background-color: #5b5a5a;
 	position: fixed;
-	width: 16.2%;
+	width: 250px;
 	height: 100vh;
 	overflow: hidden;
 	grid-area: sidebar;
