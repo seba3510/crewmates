@@ -1,4 +1,9 @@
-import image from "../assets/images/home-page/Crewmate_in_Ventilator.png";
+import image from
+	"../assets/images/home-page/Crewmate_in_Ventilator.png";
+
+//===================================================================================
+
+import { Link } from "react-router-dom";
 
 //===================================================================================
 
@@ -19,9 +24,9 @@ function SideBar() {
 						</li>
 
 						<li>
-							<a href="#">
+							<Link to="/create">
 								Create a Crewmate!
-							</a>
+							</Link>
 						</li>
 
 						<li>

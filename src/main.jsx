@@ -13,15 +13,47 @@ import { App } from "./App.jsx"
 
 //=================================================================================
 
+import {
+	BrowserRouter,
+	Route,
+	Routes
+} from "react-router-dom";
+
+//=================================================================================
+
+import { CreatePage } from "./routes/CreatePage.jsx";
+
+//=================================================================================
+
 const root =
-  document.querySelector(
-    "#root"
-  );
+	document.querySelector(
+		"#root"
+	);
 
 //=================================================================================
 
 createRoot(root).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+	<StrictMode>
+
+		<BrowserRouter>
+
+			<Routes>
+
+
+
+				<Route
+					path="/"
+					element={<App />}
+				/>
+
+				<Route
+					path="create"
+					element={<CreatePage />}
+				/>
+
+			</Routes>
+
+		</BrowserRouter>
+
+	</StrictMode>
+);
