@@ -15,7 +15,7 @@ import { useState } from "react";
 
 //===================================================================================
 
-// import { supabase } from "../client.js";
+import { supabase } from "../client.js";
 
 //===================================================================================
 
@@ -220,20 +220,15 @@ function CreatePage() {
 
 			if (isDataValid) {
 
-				alert("The form data is valid!");
+				await supabase
+					.form("Crewmates")
+					.insert({
+						name: crewmate.name,
+						miles: crewmate.miles,
+						color: crewmate.color
+					}).select();
 
 			} // if
-
-			// await supabase
-			// .form("Crewmates")
-			// .insert({
-			// 	name: crewmate.name,
-			// 	miles: crewmate.miles,
-			// 	color: crewmate.color
-			// }).select();
-
-			const x = 10;
-
 
 		} // try
 
@@ -428,7 +423,6 @@ function CreatePage() {
 											Rainbow
 										</label>
 									</div>
-
 
 								</fieldset>
 
