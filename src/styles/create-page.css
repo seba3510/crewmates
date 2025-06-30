@@ -23,7 +23,7 @@ header > .image-container > img {
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
-	/* border: 3px solid red; */
+	border: 3px solid red;
 	padding: 2em auto 2em auto;
 	height: 300px;
 }
@@ -45,11 +45,21 @@ header > .image-container > img {
 }
 
 #speed {
-	width: 80%;
+	min-width: 150px;
+	max-width: 30%;
 }
 
 #name {
-	width: 93%;
+	min-width: 180px;
+	max-width: 30%;
+}
+
+.card:nth-child(3n - 1) > .form-control,
+.card:nth-child(3n - 2) > .form-control {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .btn-container {
@@ -70,4 +80,9 @@ button {
 	padding: 0.6em 0.8em;
 	color: white;
 	font-weight: 500;
+}
+
+input[type="text"] label {
+	font-weight: bolder;
+	border: 5px solid green;
 }

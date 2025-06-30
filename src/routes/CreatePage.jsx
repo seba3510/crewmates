@@ -275,13 +275,18 @@ function CreatePage() {
 									Name
 								</label>
 
-								<input
-									type="text"
-									name="crewmate_name"
-									placeholder="Enter crewmate's name"
-									id="name"
-									onChange={handleInputChange}
-								/>
+								<div className="form-control">
+
+									<input
+										type="text"
+										name="crewmate_name"
+										placeholder="Enter crewmate's name"
+										id="name"
+										onChange={handleInputChange}
+									/>
+
+								</div>
+
 							</section>
 
 							<section className="card">
@@ -290,13 +295,18 @@ function CreatePage() {
 									Speed (mph)
 								</label>
 
-								<input
-									type="text"
-									name="crewmate_speed"
-									placeholder="Enter speed in mph"
-									id="speed"
-									onChange={handleInputChange}
-								/>
+								<div className="form-control">
+
+									<input
+										type="text"
+										name="crewmate_speed"
+										placeholder="Enter speed in mph"
+										id="speed"
+										onChange={handleInputChange}
+									/>
+
+								</div>
+
 
 							</section>
 
@@ -335,7 +345,7 @@ function CreatePage() {
 
 									</div>
 
-									<div>
+									<div className="form-control">
 										<input
 											type="radio"
 											name="color"
@@ -349,7 +359,7 @@ function CreatePage() {
 										</label>
 									</div>
 
-									<div>
+									<div className="form-control">
 										<input
 											type="radio"
 											name="color"
