@@ -17,10 +17,12 @@ function SideBar() {
 
 				<nav>
 					<ul>
+
 						<li>
-							<a href="#">
+
+							<Link to="/">
 								Home
-							</a>
+							</Link>
 						</li>
 
 						<li>

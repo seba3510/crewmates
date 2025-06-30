@@ -16,6 +16,7 @@ body {
 	align-items: center;
 	background-color: #5b5a5a;
 	position: fixed;
+	width: 16.2%;
 	height: 100vh;
 	overflow: hidden;
 	grid-area: sidebar;
