@@ -63,12 +63,30 @@ function CreatePage() {
 
 	function checkSpeed(value) {
 
+		const pattern =
+			/(\d)+/;
+
+		const doesPatternMatch =
+			pattern.test(value);
+
+		if (!doesPatternMatch) {
+
+			const message =
+				"The value must be " +
+				"a number.";
+
+			throw new TypeError(message);
+
+		} // if
+
+		return true;
 
 	} // checkSpeed()
 
 	//===================================================================================
 
 	async function createCrewmate(event) {
+
 		try {
 
 			event.preventDefault();
@@ -85,6 +103,19 @@ function CreatePage() {
 
 			} // if
 
+			const isSpeedValid =
+				(checkSpeed(target));
+
+			if (isSpeedValid) {
+
+				console.log(`Name: ${crewmate.name}`);
+
+				console.log(`Speed: ${parseFloat(crewmate.miles)}`);
+
+				console.log(`Color: ${crewmate.color}`);
+
+			} // if
+
 			// await supabase
 			// .form("Crewmates")
 			// .insert({
@@ -92,12 +123,6 @@ function CreatePage() {
 			// 	miles: crewmate.miles,
 			// 	color: crewmate.color
 			// }).select();
-
-			console.log(`Name: ${crewmate.name}`);
-
-			console.log(`Speed: ${parseFloat(crewmate.miles)}`);
-
-			console.log(`Color: ${crewmate.color}`);
 
 			const x = 10;
 
