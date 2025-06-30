@@ -35,13 +35,11 @@ function SideBar() {
 
 			</header>
 
-			<div>
-
+			<div className="image-container">
 				<img
 					src={image}
 					alt="Imposter hiding in a ventilator."
 				/>
-
 			</div>
 
 

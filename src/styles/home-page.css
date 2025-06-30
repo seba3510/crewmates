@@ -15,7 +15,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	background-color: #5b5a5a;
-	width: 100%;
+	position: fixed;
 	height: 100vh;
 	overflow: hidden;
 	grid-area: sidebar;
@@ -27,8 +27,9 @@ body {
 	width: 10vw;
 }
 
-#sidebar div {
+#sidebar .image-container {
 	margin-top: 950px;
+	width: 50%;
 }
 
 #sidebar ul {
@@ -49,15 +50,12 @@ a {
 	cursor: pointer;
 }
 
-.crewmates-img {
-	width: 50vw;
-}
-
 main {
 	grid-area: main;
 	grid-row: 1;
 	grid-column: 2;
 	color: white;
+	overflow: hidden;
 }
 
 main > header {
@@ -68,7 +66,6 @@ main > header {
 	font-weight: bold;
 	margin-top: 10em;
 	margin-left: 5em;
-	border: 5px solid red;
 }
 
 main > header > h1 {
@@ -79,4 +76,24 @@ main > header > h1 {
 main > header > p {
 	font-size: 2rem;
 	text-align: center;
+}
+
+.image-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+header > .image-container:nth-child(odd) {
+	width: 50%;
+}
+
+header > .image-container:nth-child(even) {
+	width: 50%;
+	margin-top: 5em;
+}
+
+.image-container:nth-child(even) > img {
+	width: 50%;
 }

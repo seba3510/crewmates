@@ -10,6 +10,11 @@ import crewmatesImage from "./assets/images/home-page/Crewmates.png";
 
 //===================================================================================
 
+import spaceship from "./assets/images/home-page/Spaceship.webp"
+
+//===================================================================================
+
+
 function App() {
 
 	const crewmates = [];
@@ -31,11 +36,17 @@ function App() {
 						Here is where you create your own set of crewmates before sending them off into space!
 					</p>
 
-					<div>
+					<div className="image-container">
 						<img
 							src={crewmatesImage}
 							alt="Crewmates"
-							className="crewmates-img"
+						/>
+					</div>
+
+					<div className="image-container">
+						<img
+							src={spaceship}
+							alt="This is a spaceship."
 						/>
 					</div>
 				</header>
