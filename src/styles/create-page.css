@@ -23,9 +23,9 @@ header > .image-container > img {
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
-	border: 3px solid red;
+	/* border: 3px solid red; */
 	padding: 2em auto 2em auto;
-	height: 300px;
+	height: 500px;
 }
 
 .card {
@@ -82,7 +82,14 @@ button {
 	font-weight: 500;
 }
 
-input[type="text"] label {
-	font-weight: bolder;
-	border: 5px solid green;
+.card:nth-child(3n - 1) > label,
+.card:nth-child(3n - 2) > label,
+legend {
+	font-weight: 800;
+	font-size: 1.2em;
+}
+
+fieldset {
+	min-width: 130px;
+	max-width: 25%;
 }
