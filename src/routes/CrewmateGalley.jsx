@@ -94,6 +94,17 @@ function CrewmateGallery({ props }) {
 
 	//=================================================================
 
+	function handleClick() {
+
+		const location =
+			"/create";
+
+		window.location =
+			location;
+
+	} // handleClick()
+
+	//=================================================================
 
 	return (
 
@@ -126,7 +137,7 @@ function CrewmateGallery({ props }) {
 
 
 				<div className="btn-container">
-					<button type="button">
+					<button type="button" onClick={handleClick}>
 						Create one here!
 					</button>
 				</div>

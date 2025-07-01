@@ -27,8 +27,8 @@ function Card(
 
 			<section className="card"
 				style={{
-					boxShadow: `5px 5px 5px 5px ${color}`,
-					WebkitBoxShadow: `5px 5px 15px 5px ${color}`
+					boxShadow: `5px 5px 13px 5px ${color}`,
+					WebkitBoxShadow: `5px 5px 13px 5px ${color}`
 				}}>
 				<div className="image-container">
 
