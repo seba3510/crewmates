@@ -2,7 +2,9 @@ import "../styles/create-page.css";
 
 //===================================================================================
 
-import { SideBar } from "../components/SideBar.jsx";
+import {
+	SideBar
+} from "../components/SideBar.jsx";
 
 //===================================================================================
 
@@ -11,7 +13,9 @@ import crewmates
 
 //===================================================================================
 
-import { useState } from "react";
+import {
+	useState
+} from "react";
 
 //===================================================================================
 
@@ -64,7 +68,7 @@ function CreatePage() {
 	function checkSpeed(speed) {
 
 		const pattern =
-			/([0-9]+)/
+			/([0-9]+)/;
 
 		const value =
 			speed
@@ -132,6 +136,9 @@ function CreatePage() {
 				isSelected =
 					true;
 
+				crewmate.color =
+					color.value;
+
 			} // if
 
 		}); // forEach()
@@ -160,14 +167,6 @@ function CreatePage() {
 			const target =
 				event.target;
 
-			const isName =
-				(target[0].name ===
-					"crewmate_name");
-
-			const isSpeed =
-				(target[1].name ===
-					"crewmate_speed");
-
 			const colors =
 				[
 					target[3],
@@ -179,30 +178,6 @@ function CreatePage() {
 					target[9],
 					target[10]
 				];
-
-			if (isName) {
-
-				checkName(
-					target[0]
-				);
-
-			} // if
-
-			else if (isSpeed) {
-
-				checkSpeed(
-					target[1]
-				);
-
-			} // else if
-
-			else {
-
-				checkColor(
-					colors
-				);
-
-			} // else
 
 			const isNameValid =
 				(checkName(target[0]));
@@ -220,8 +195,14 @@ function CreatePage() {
 
 			if (isDataValid) {
 
+				setCrewmate({
+					name: crewmate.crewmate_name,
+					miles: crewmate.crewmate_speed,
+					color: crewmate.crewmate_color
+				});
+
 				await supabase
-					.form("Crewmates")
+					.from("Crewmates")
 					.insert({
 						name: crewmate.name,
 						miles: crewmate.miles,
@@ -242,7 +223,6 @@ function CreatePage() {
 
 	//===================================================================================
 
-
 	return (
 
 		<>
@@ -261,7 +241,8 @@ function CreatePage() {
 				</header>
 
 				<section id="form-container">
-					<form onSubmit={createCrewmate}>
+					<form
+						onSubmit={createCrewmate}>
 
 						<section id="cards">
 
@@ -302,7 +283,6 @@ function CreatePage() {
 
 								</div>
 
-
 							</section>
 
 							<section className="card">
@@ -314,7 +294,7 @@ function CreatePage() {
 									<div>
 										<input
 											type="radio"
-											name="color"
+											name="crewmate_color"
 											value="Red"
 											id="red"
 											onChange={handleInputChange}
@@ -343,7 +323,7 @@ function CreatePage() {
 									<div className="form-control">
 										<input
 											type="radio"
-											name="color"
+											name="crewmate_color"
 											value="Blue"
 											id="blue"
 											onChange={handleInputChange}

@@ -1,7 +1,12 @@
-import { StrictMode } from 'react';
+import {
+	StrictMode
+} from 'react';
+
 //=================================================================================
 
-import { createRoot } from 'react-dom/client'
+import {
+	createRoot
+} from 'react-dom/client'
 
 //=================================================================================
 
@@ -21,11 +26,21 @@ import {
 
 //=================================================================================
 
-import { CreatePage } from "./routes/CreatePage.jsx";
+import {
+	CreatePage
+} from "./routes/CreatePage.jsx";
 
 //=================================================================================
 
-import { CrewmateGallery } from "./routes/CrewmateGalley.jsx";
+import {
+	CrewmateGallery
+} from "./routes/CrewmateGalley.jsx";
+
+//=================================================================================
+
+import {
+	ErrorPage
+} from "./routes/ErrorPage.jsx";
 
 //=================================================================================
 
@@ -48,6 +63,7 @@ createRoot(root).render(
 				<Route
 					path="/"
 					element={<App />}
+					errorElement={<ErrorPage />}
 				/>
 
 				<Route
@@ -59,7 +75,6 @@ createRoot(root).render(
 					path="gallery"
 					element={<CrewmateGallery />}
 				/>
-
 
 			</Routes>
 

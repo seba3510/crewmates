@@ -1,11 +1,10 @@
-import { SideBar } from "../components/SideBar.jsx";
+import {
+	SideBar
+} from "../components/SideBar.jsx";
 
 //=================================================================
 
 import "../styles/gallery-page.css";
-
-//=================================================================
-
 
 //=================================================================
 
@@ -27,6 +26,7 @@ function CrewmateGallery() {
 				<div className="btn-container">
 					<button
 						type="button"
+
 					>
 						Create one here!
 					</button>

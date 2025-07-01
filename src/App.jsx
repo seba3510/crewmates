@@ -2,7 +2,9 @@ import "./styles/home-page.css";
 
 //===================================================================================
 
-import { SideBar } from "./components/SideBar";
+import {
+	SideBar
+} from "./components/SideBar";
 
 //===================================================================================
 
@@ -14,7 +16,9 @@ import spaceship from "./assets/images/home-page/Spaceship.webp"
 
 //===================================================================================
 
-import { Outlet } from "react-router-dom";
+import {
+	Outlet
+} from "react-router-dom";
 
 //===================================================================================
 
@@ -54,7 +58,7 @@ function App() {
 					</div>
 				</header>
 
-				{/* <Outlet /> */}
+				<Outlet />
 
 			</main>
 
