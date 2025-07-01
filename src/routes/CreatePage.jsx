@@ -37,6 +37,15 @@ function CreatePage() {
 
 	//===================================================================================
 
+	const [
+		selectedColor,
+		setSelectedColor
+	] =
+		useState("");
+
+	//===================================================================================
+
+
 	function handleInputChange(event) {
 
 		/*
@@ -136,8 +145,9 @@ function CreatePage() {
 				isSelected =
 					true;
 
-				crewmate.color =
-					color.value;
+				setSelectedColor(
+					color.value
+				);
 
 			} // if
 
@@ -157,6 +167,28 @@ function CreatePage() {
 	} // checkColor()
 
 	//===================================================================================
+
+	function getSelectedColor(colors) {
+
+		let result = "";
+
+		colors.forEach((color) => {
+
+			const isSelected =
+				(color.checked);
+
+			if (isSelected) {
+
+				result =
+					color.value;
+
+			} // if
+
+		}); // forEach()
+
+		return result;
+
+	} // getSelectedColor()
 
 	async function createCrewmate(event) {
 
@@ -195,19 +227,52 @@ function CreatePage() {
 
 			if (isDataValid) {
 
+				const name =
+					target["crewmate_name"].value.trim();
+
+				const miles =
+					parseFloat(
+						target["crewmate_speed"].value
+					);
+
+				const color =
+					getSelectedColor(
+						colors
+					);
+
 				setCrewmate({
-					name: crewmate.crewmate_name,
-					miles: crewmate.crewmate_speed,
-					color: crewmate.crewmate_color
+					name: name,
+					miles: miles,
+					color: color
 				});
 
-				await supabase
-					.from("Crewmates")
-					.insert({
-						name: crewmate.name,
-						miles: crewmate.miles,
-						color: crewmate.color
-					}).select();
+				const {
+					data,
+					error
+				} =
+					await supabase
+						.from("Crewmates")
+						.insert({
+							name: name,
+							speed: miles,
+							color: color
+						}).select();
+
+				const message =
+					`Crewmate created: ${data}`;
+
+				if (error) {
+
+					throw error
+
+				} // if
+
+				else {
+
+					console.log(message);
+
+				} // else
+
 
 			} // if
 
@@ -215,7 +280,7 @@ function CreatePage() {
 
 		catch (error) {
 
-			alert(error);
+			alert(error.message);
 
 		} // catch
 
@@ -308,7 +373,7 @@ function CreatePage() {
 									<div>
 										<input
 											type="radio"
-											name="color"
+											name="crewmate_color"
 											value="Green"
 											id="green"
 											onChange={handleInputChange}
@@ -337,7 +402,7 @@ function CreatePage() {
 									<div className="form-control">
 										<input
 											type="radio"
-											name="color"
+											name="crewmate_color"
 											value="Purple"
 											id="purple"
 											onChange={handleInputChange}
@@ -351,7 +416,7 @@ function CreatePage() {
 									<div>
 										<input
 											type="radio"
-											name="color"
+											name="crewmate_color"
 											value="Yellow"
 											id="yellow"
 											onChange={handleInputChange}
@@ -365,7 +430,7 @@ function CreatePage() {
 									<div>
 										<input
 											type="radio"
-											name="color"
+											name="crewmate_color"
 											value="Orange"
 											id="orange"
 											onChange={handleInputChange}
@@ -379,7 +444,7 @@ function CreatePage() {
 									<div>
 										<input
 											type="radio"
-											name="color"
+											name="crewmate_color"
 											value="Pink"
 											id="pink"
 											onChange={handleInputChange}
@@ -393,7 +458,7 @@ function CreatePage() {
 									<div>
 										<input
 											type="radio"
-											name="color"
+											name="crewmate_color"
 											value="Rainbow"
 											id="rainbow"
 											onChange={handleInputChange}
