@@ -4,7 +4,9 @@ import {
 
 //=================================================================
 
-import { Card } from "../components/Card.jsx";
+import {
+	Card
+} from "../components/Card.jsx";
 
 //=================================================================
 
@@ -19,7 +21,9 @@ import "../styles/gallery-page.css";
 
 //=================================================================
 
-import { supabase } from "../client.js";
+import {
+	supabase
+} from "../client.js";
 
 //=================================================================
 
@@ -58,23 +62,26 @@ function CrewmateGallery({ props }) {
 
 				console.log(data);
 
-				setCrewmates(data);
+				setCrewmates(
+					data
+				);
 
 			} // if
-
 
 		} // try
 
 		catch (error) {
 
-			alert(error.message);
+			const message =
+				error.message;
+
+			alert(message);
 
 		} // catch
 
 	} // fetchGallery()
 
 	//=================================================================
-
 
 	useEffect(() => {
 
