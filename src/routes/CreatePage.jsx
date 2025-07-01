@@ -213,14 +213,23 @@ function CreatePage() {
 					target[10]
 				];
 
-			const isNameValid =
-				(checkName(target[0]));
+			const isNameValid = (
+				checkName(
+					target[0]
+				)
+			);
 
-			const isSpeedValid =
-				(checkSpeed(target[1]));
+			const isSpeedValid = (
+				checkSpeed(
+					target[1]
+				)
+			);
 
-			const isColorSelected =
-				(checkColor(colors));
+			const isColorSelected = (
+				checkColor(
+					colors
+				)
+			);
 
 			const isDataValid =
 				(isNameValid) &&
@@ -265,23 +274,10 @@ function CreatePage() {
 					error
 				);
 
-				target[0].value = "";
-
-				target[1].value = "";
-
-				colors.forEach((color) => {
-
-					const isSelected =
-						(color.checked);
-
-					if (isSelected) {
-
-						color.checked =
-							(!color.checked);
-
-					} // if
-
-				}); // forEach()
+				clearForm(
+					target,
+					colors
+				);
 
 			} // if
 
@@ -294,6 +290,30 @@ function CreatePage() {
 		} // catch
 
 	} // createCrewmate()
+
+	//===================================================================================
+
+	function clearForm(target, colors) {
+
+		target[0].value = "";
+
+		target[1].value = "";
+
+		colors.forEach((color) => {
+
+			const isSelected =
+				(color.checked);
+
+			if (isSelected) {
+
+				color.checked =
+					(!color.checked);
+
+			} // if
+
+		}); // forEach()
+
+	} // clearForm()
 
 	//===================================================================================
 
