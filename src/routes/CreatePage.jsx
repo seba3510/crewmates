@@ -190,6 +190,8 @@ function CreatePage() {
 
 	} // getSelectedColor()
 
+	//===================================================================================
+
 	async function createCrewmate(event) {
 
 		try {
@@ -227,23 +229,23 @@ function CreatePage() {
 
 			if (isDataValid) {
 
-				const name =
-					target["crewmate_name"].value.trim();
+				let nameInput =
+					target[0].value.trim();
 
-				const miles =
+				let milesInput =
 					parseFloat(
-						target["crewmate_speed"].value
+						target[1].value
 					);
 
-				const color =
+				let selectedColor =
 					getSelectedColor(
 						colors
 					);
 
 				setCrewmate({
-					name: name,
-					miles: miles,
-					color: color
+					name: nameInput,
+					miles: milesInput,
+					color: selectedColor
 				});
 
 				const {
@@ -253,26 +255,33 @@ function CreatePage() {
 					await supabase
 						.from("Crewmates")
 						.insert({
-							name: name,
-							speed: miles,
-							color: color
+							name: nameInput,
+							speed: milesInput,
+							color: selectedColor
 						}).select();
 
-				const message =
-					`Crewmate created: ${data}`;
+				checkError(
+					data,
+					error
+				);
 
-				if (error) {
+				target[0].value = "";
 
-					throw error
+				target[1].value = "";
 
-				} // if
+				colors.forEach((color) => {
 
-				else {
+					const isSelected =
+						(color.checked);
 
-					console.log(message);
+					if (isSelected) {
 
-				} // else
+						color.checked =
+							(!color.checked);
 
+					} // if
+
+				}); // forEach()
 
 			} // if
 
@@ -285,6 +294,27 @@ function CreatePage() {
 		} // catch
 
 	} // createCrewmate()
+
+	//===================================================================================
+
+	function checkError(data, error) {
+
+		const message =
+			`Crewmate created: ${data}`;
+
+		if (error) {
+
+			throw error;
+
+		} // if
+
+		else {
+
+			console.log(message);
+
+		} // else
+
+	} // checkError()
 
 	//===================================================================================
 
