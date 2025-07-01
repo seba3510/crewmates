@@ -44,6 +44,10 @@ import {
 
 //=================================================================================
 
+const crewmates = [];
+
+//=================================================================================
+
 const root =
 	document.querySelector(
 		"#root"
@@ -72,8 +76,10 @@ createRoot(root).render(
 				/>
 
 				<Route
-					path="gallery"
-					element={<CrewmateGallery />}
+					path="/gallery"
+					element={<CrewmateGallery
+						props={crewmates} />}
+
 				/>
 
 			</Routes>
