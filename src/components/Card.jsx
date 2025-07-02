@@ -45,16 +45,39 @@ function Card(
 					</li>
 
 					<li>
-						Name of Crewmate: {name}
+
+						<strong>
+							Name of Crewmate: &#32;
+						</strong>
+
+						<span>
+							{name}
+						</span>
+
 					</li>
 
 					<li>
-						Speed of Crewmate: {speed}
+
+						<strong>
+							Speed of Crewmate: &#32;
+						</strong>
+
+						<span>
+							{speed}
+						</span>
+
 					</li>
 
 					<li>
-						Color of Crewmate: {color}
+						<strong>
+							Color of Crewmate: &#32;
+						</strong>
+
+						<span>
+							{color}
+						</span>
 					</li>
+
 				</ul>
 
 				<section>

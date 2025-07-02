@@ -16,14 +16,19 @@ button {
 	/* border: 5px solid blue; */
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	width: 100%;
+	height: min-content;
+	margin-top: 2em;
+	padding-top: 50px;
+	gap: 50px;
+	border: 5px solid red;
 }
 
 .card {
-	gap: 10px;
+	/* gap: 20px; */
 	min-width: 290px;
 	max-width: 20%;
 }
@@ -40,4 +45,10 @@ header > .image-container {
 
 input[type="radio"] {
 	cursor: pointer;
+}
+
+.btn-container {
+	position: absolute;
+	top: auto;
+	left: 50%;
 }
