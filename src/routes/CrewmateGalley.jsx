@@ -27,7 +27,7 @@ import {
 
 //=================================================================
 
-function CrewmateGallery({ props }) {
+function CrewmateGallery({ gallery }) {
 
 	const [
 		crewmates,
@@ -56,7 +56,7 @@ function CrewmateGallery({ props }) {
 
 				throw error;
 
-			}
+			} // if
 
 			else {
 
@@ -66,7 +66,7 @@ function CrewmateGallery({ props }) {
 					data
 				);
 
-			} // if
+			} // else
 
 		} // try
 
@@ -87,7 +87,7 @@ function CrewmateGallery({ props }) {
 
 		fetchGallery();
 
-	}, [props]); // useEffect()
+	}, [gallery]); // useEffect()
 
 	//=================================================================
 
@@ -97,7 +97,8 @@ function CrewmateGallery({ props }) {
 	//=================================================================
 
 	const isGalleryEmpty =
-		(numCrewmates === 0);
+		(numCrewmates
+			=== 0);
 
 	//=================================================================
 
@@ -131,24 +132,35 @@ function CrewmateGallery({ props }) {
 
 				<section id="cards">
 					{(!isGalleryEmpty) && (
+
 						crewmates.map((crewmate) => (
+
 							<Card
-								key={crewmate.id} // Assuming each crewmate has a unique 'id' field
+								key={crewmate.id}
 								name={crewmate.name}
 								speed={crewmate.speed}
 								color={crewmate.color}
 							/>
-						))
+
+						)) // map()
+
 					)}
+
 				</section>
 
+				<section
+					className="btn-container"
+				>
 
-				<div className="btn-container">
-					<button type="button" onClick={handleClick}>
+					<button
+						type="button"
+						onClick={handleClick}
+					>
 						Create one here!
 					</button>
-				</div>
-			</main >
+
+				</section>
+			</main>
 
 		</>
 

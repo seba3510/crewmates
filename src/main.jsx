@@ -62,8 +62,6 @@ createRoot(root).render(
 
 			<Routes>
 
-
-
 				<Route
 					path="/"
 					element={<App />}
@@ -73,12 +71,16 @@ createRoot(root).render(
 				<Route
 					path="create"
 					element={<CreatePage />}
+					errorElement={<ErrorPage />}
 				/>
 
 				<Route
 					path="/gallery"
-					element={<CrewmateGallery
-						props={crewmates} />}
+					element={
+						<CrewmateGallery
+							gallery={crewmates} />
+					}
+					errorElement={<ErrorPage />}
 
 				/>
 

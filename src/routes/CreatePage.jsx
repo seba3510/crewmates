@@ -19,7 +19,9 @@ import {
 
 //===================================================================================
 
-import { supabase } from "../client.js";
+import {
+	supabase
+} from "../client.js";
 
 //===================================================================================
 
@@ -258,7 +260,6 @@ function CreatePage() {
 				});
 
 				const {
-					data,
 					error
 				} =
 					await supabase
@@ -270,7 +271,6 @@ function CreatePage() {
 						}).select();
 
 				checkError(
-					data,
 					error
 				);
 
@@ -285,7 +285,10 @@ function CreatePage() {
 
 		catch (error) {
 
-			alert(error.message);
+			const message =
+				error.message;
+
+			alert(message);
 
 		} // catch
 
@@ -317,10 +320,11 @@ function CreatePage() {
 
 	//===================================================================================
 
-	function checkError(data, error) {
+	function checkError(error) {
 
 		const message =
-			`Crewmate created: ${data}`;
+			"The crewmate has " +
+			"been created!";
 
 		if (error) {
 
@@ -330,7 +334,7 @@ function CreatePage() {
 
 		else {
 
-			console.log(message);
+			alert(message);
 
 		} // else
 
@@ -347,12 +351,15 @@ function CreatePage() {
 				<header>
 					<h1>Create a New Crewmate</h1>
 
-					<div className="image-container">
+					<section className="image-container">
+
 						<img
 							src={crewmates}
 							alt="Crewmates"
 						/>
-					</div>
+
+					</section>
+
 				</header>
 
 				<section id="form-container">
@@ -366,7 +373,7 @@ function CreatePage() {
 									Name
 								</label>
 
-								<div className="form-control">
+								<section className="form-control">
 
 									<input
 										type="text"
@@ -376,7 +383,7 @@ function CreatePage() {
 										onChange={handleInputChange}
 									/>
 
-								</div>
+								</section>
 
 							</section>
 
@@ -386,7 +393,7 @@ function CreatePage() {
 									Speed (mph)
 								</label>
 
-								<div className="form-control">
+								<section className="form-control">
 
 									<input
 										type="text"
@@ -396,7 +403,7 @@ function CreatePage() {
 										onChange={handleInputChange}
 									/>
 
-								</div>
+								</section>
 
 							</section>
 
@@ -406,7 +413,7 @@ function CreatePage() {
 
 									<legend>Color</legend>
 
-									<div>
+									<section className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -418,9 +425,9 @@ function CreatePage() {
 										<label htmlFor="red">
 											Red
 										</label>
-									</div>
+									</section>
 
-									<div>
+									<section className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -433,9 +440,9 @@ function CreatePage() {
 											Green
 										</label>
 
-									</div>
+									</section>
 
-									<div className="form-control">
+									<section className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -447,9 +454,9 @@ function CreatePage() {
 										<label htmlFor="blue">
 											Blue
 										</label>
-									</div>
+									</section>
 
-									<div className="form-control">
+									<section className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -461,9 +468,9 @@ function CreatePage() {
 										<label htmlFor="purple">
 											Purple
 										</label>
-									</div>
+									</section>
 
-									<div>
+									<section className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -475,9 +482,9 @@ function CreatePage() {
 										<label htmlFor="yellow">
 											Yellow
 										</label>
-									</div>
+									</section>
 
-									<div>
+									<section className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -489,9 +496,9 @@ function CreatePage() {
 										<label htmlFor="orange">
 											Orange
 										</label>
-									</div>
+									</section>
 
-									<div>
+									<section className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -503,9 +510,9 @@ function CreatePage() {
 										<label htmlFor="pink">
 											Pink
 										</label>
-									</div>
+									</section>
 
-									<div>
+									<section className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -517,7 +524,7 @@ function CreatePage() {
 										<label htmlFor="rainbow">
 											Rainbow
 										</label>
-									</div>
+									</section>
 
 								</fieldset>
 
@@ -525,13 +532,13 @@ function CreatePage() {
 						</section>
 
 
-						<div className="btn-container">
+						<section className="btn-container">
 							<button
 								type="submit"
 							>
 								Create Crewmate
 							</button>
-						</div>
+						</section>
 
 					</form>
 
