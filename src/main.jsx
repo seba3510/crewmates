@@ -27,8 +27,8 @@ import {
 //=================================================================================
 
 import {
-	CreatePage
-} from "./routes/CreatePage.jsx";
+	CreateCrewmate
+} from "./routes/CreateCrewmate.jsx";
 
 //=================================================================================
 
@@ -73,8 +73,8 @@ createRoot(root).render(
 				/>
 
 				<Route
-					path="create"
-					element={<CreatePage />}
+					path="/create"
+					element={<CreateCrewmate />}
 					errorElement={<ErrorPage />}
 				/>
 

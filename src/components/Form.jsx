@@ -1,15 +1,4 @@
-import "../styles/create-page.css";
-
-//===================================================================================
-
-import {
-	SideBar
-} from "../components/SideBar.jsx";
-
-//===================================================================================
-
-import crewmates
-	from "../assets/images/home-page/Crewmates.png";
+import { supabase } from "../client.js";
 
 //===================================================================================
 
@@ -19,13 +8,11 @@ import {
 
 //===================================================================================
 
-import {
-	supabase
-} from "../client.js";
+import "../styles/create-page.css";
 
 //===================================================================================
 
-function CreatePage() {
+function Form() {
 
 	const [
 		crewmate,
@@ -33,7 +20,7 @@ function CreatePage() {
 	] =
 		useState({
 			name: "",
-			miles: 0.0,
+			speed: "",
 			color: ""
 		});
 
@@ -344,212 +331,192 @@ function CreatePage() {
 
 	return (
 
-		<>
-			<SideBar />
+		<section id="form-container">
+			<form
+				onSubmit={createCrewmate}>
 
-			<main>
-				<header>
-					<h1>Create a New Crewmate</h1>
+				<section id="cards">
 
-					<section className="image-container">
+					<section className="card">
+						<label htmlFor="name">
+							Name
+						</label>
 
-						<img
-							src={crewmates}
-							alt="Crewmates"
-						/>
+						<section className="form-control">
+
+							<input
+								type="text"
+								name="crewmate_name"
+								placeholder="Enter crewmate's name"
+								id="name"
+								onChange={handleInputChange}
+							/>
+
+						</section>
 
 					</section>
 
-				</header>
+					<section className="card">
 
-				<section id="form-container">
-					<form
-						onSubmit={createCrewmate}>
+						<label htmlFor="speed">
+							Speed (mph)
+						</label>
 
-						<section id="cards">
+						<section className="form-control">
 
-							<section className="card">
-								<label htmlFor="name">
-									Name
-								</label>
+							<input
+								type="text"
+								name="crewmate_speed"
+								placeholder="Enter speed in mph"
+								id="speed"
+								onChange={handleInputChange}
+							/>
 
-								<section className="form-control">
-
-									<input
-										type="text"
-										name="crewmate_name"
-										placeholder="Enter crewmate's name"
-										id="name"
-										onChange={handleInputChange}
-									/>
-
-								</section>
-
-							</section>
-
-							<section className="card">
-
-								<label htmlFor="speed">
-									Speed (mph)
-								</label>
-
-								<section className="form-control">
-
-									<input
-										type="text"
-										name="crewmate_speed"
-										placeholder="Enter speed in mph"
-										id="speed"
-										onChange={handleInputChange}
-									/>
-
-								</section>
-
-							</section>
-
-							<section className="card">
-
-								<fieldset>
-
-									<legend>Color</legend>
-
-									<section className="form-control">
-										<input
-											type="radio"
-											name="crewmate_color"
-											value="Red"
-											id="red"
-											onChange={handleInputChange}
-										/>
-
-										<label htmlFor="red">
-											Red
-										</label>
-									</section>
-
-									<section className="form-control">
-										<input
-											type="radio"
-											name="crewmate_color"
-											value="Green"
-											id="green"
-											onChange={handleInputChange}
-										/>
-
-										<label htmlFor="green">
-											Green
-										</label>
-
-									</section>
-
-									<section className="form-control">
-										<input
-											type="radio"
-											name="crewmate_color"
-											value="Blue"
-											id="blue"
-											onChange={handleInputChange}
-										/>
-
-										<label htmlFor="blue">
-											Blue
-										</label>
-									</section>
-
-									<section className="form-control">
-										<input
-											type="radio"
-											name="crewmate_color"
-											value="Purple"
-											id="purple"
-											onChange={handleInputChange}
-										/>
-
-										<label htmlFor="purple">
-											Purple
-										</label>
-									</section>
-
-									<section className="form-control">
-										<input
-											type="radio"
-											name="crewmate_color"
-											value="Yellow"
-											id="yellow"
-											onChange={handleInputChange}
-										/>
-
-										<label htmlFor="yellow">
-											Yellow
-										</label>
-									</section>
-
-									<section className="form-control">
-										<input
-											type="radio"
-											name="crewmate_color"
-											value="Orange"
-											id="orange"
-											onChange={handleInputChange}
-										/>
-
-										<label htmlFor="orange">
-											Orange
-										</label>
-									</section>
-
-									<section className="form-control">
-										<input
-											type="radio"
-											name="crewmate_color"
-											value="Pink"
-											id="pink"
-											onChange={handleInputChange}
-										/>
-
-										<label htmlFor="pink">
-											Pink
-										</label>
-									</section>
-
-									<section className="form-control">
-										<input
-											type="radio"
-											name="crewmate_color"
-											value="Rainbow"
-											id="rainbow"
-											onChange={handleInputChange}
-										/>
-
-										<label htmlFor="rainbow">
-											Rainbow
-										</label>
-									</section>
-
-								</fieldset>
-
-							</section>
 						</section>
 
+					</section>
 
-						<section className="btn-container">
-							<button
-								type="submit"
-							>
-								Create Crewmate
-							</button>
-						</section>
+					<section className="card">
 
-					</form>
+						<fieldset>
 
+							<legend>Color</legend>
+
+							<section className="form-control">
+								<input
+									type="radio"
+									name="crewmate_color"
+									value="Red"
+									id="red"
+									onChange={handleInputChange}
+								/>
+
+								<label htmlFor="red">
+									Red
+								</label>
+							</section>
+
+							<section className="form-control">
+								<input
+									type="radio"
+									name="crewmate_color"
+									value="Green"
+									id="green"
+									onChange={handleInputChange}
+								/>
+
+								<label htmlFor="green">
+									Green
+								</label>
+
+							</section>
+
+							<section className="form-control">
+								<input
+									type="radio"
+									name="crewmate_color"
+									value="Blue"
+									id="blue"
+									onChange={handleInputChange}
+								/>
+
+								<label htmlFor="blue">
+									Blue
+								</label>
+							</section>
+
+							<section className="form-control">
+								<input
+									type="radio"
+									name="crewmate_color"
+									value="Purple"
+									id="purple"
+									onChange={handleInputChange}
+								/>
+
+								<label htmlFor="purple">
+									Purple
+								</label>
+							</section>
+
+							<section className="form-control">
+								<input
+									type="radio"
+									name="crewmate_color"
+									value="Yellow"
+									id="yellow"
+									onChange={handleInputChange}
+								/>
+
+								<label htmlFor="yellow">
+									Yellow
+								</label>
+							</section>
+
+							<section className="form-control">
+								<input
+									type="radio"
+									name="crewmate_color"
+									value="Orange"
+									id="orange"
+									onChange={handleInputChange}
+								/>
+
+								<label htmlFor="orange">
+									Orange
+								</label>
+							</section>
+
+							<section className="form-control">
+								<input
+									type="radio"
+									name="crewmate_color"
+									value="Pink"
+									id="pink"
+									onChange={handleInputChange}
+								/>
+
+								<label htmlFor="pink">
+									Pink
+								</label>
+							</section>
+
+							<section className="form-control">
+								<input
+									type="radio"
+									name="crewmate_color"
+									value="Rainbow"
+									id="rainbow"
+									onChange={handleInputChange}
+								/>
+
+								<label htmlFor="rainbow">
+									Rainbow
+								</label>
+							</section>
+
+						</fieldset>
+
+					</section>
 				</section>
 
-			</main>
-		</>
+
+				<section
+					className="btn-container">
+					<button
+						type="submit"
+					>
+						Create Crewmate
+					</button>
+				</section>
+
+			</form>
+
+		</section>
 	);
 
-} // CreatePage()
+} // Form()
 
 //===================================================================================
 
-export { CreatePage };
+export { Form };

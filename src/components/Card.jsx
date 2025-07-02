@@ -94,7 +94,9 @@ function Card(
 				</ul>
 
 				<section>
-					<button type="button" onClick={displayEditPage}>
+					<button
+						type="button"
+						onClick={displayEditPage}>
 						Edit Crewmate
 					</button>
 
