@@ -12,6 +12,19 @@ function Card(
 
 	//============================================================
 
+	function displayEditPage() {
+
+		const location =
+			"/edit";
+
+		window.location =
+			location;
+
+	} // displayEditPage()
+
+	//============================================================
+
+
 	const isRainbow =
 		(color ===
 			"Rainbow");
@@ -81,7 +94,7 @@ function Card(
 				</ul>
 
 				<section>
-					<button type="button">
+					<button type="button" onClick={displayEditPage}>
 						Edit Crewmate
 					</button>
 

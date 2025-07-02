@@ -24,7 +24,7 @@ button {
 	margin-top: 2em;
 	padding-top: 50px;
 	gap: 50px;
-	border: 5px solid red;
+	/* border: 5px solid red; */
 }
 
 .card {

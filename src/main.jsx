@@ -44,6 +44,10 @@ import {
 
 //=================================================================================
 
+import { EditCrewmate } from "./routes/EditCrewmate.jsx";
+
+//=================================================================================
+
 const crewmates = [];
 
 //=================================================================================
@@ -81,8 +85,15 @@ createRoot(root).render(
 							gallery={crewmates} />
 					}
 					errorElement={<ErrorPage />}
-
 				/>
+
+				<Route
+					path="/edit"
+					element={<EditCrewmate />}
+					errorElement={<ErrorPage />}
+				/>
+
+
 
 			</Routes>
 
