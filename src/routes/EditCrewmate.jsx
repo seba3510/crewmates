@@ -23,6 +23,10 @@ import { supabase } from "../client.js";
 
 //==============================================================
 
+import "../styles/edit-page.css";
+
+//==============================================================
+
 function EditCrewmate() {
 
 	const {
@@ -401,6 +405,47 @@ function EditCrewmate() {
 
 	//==============================================================
 
+	async function deleteCrewmate(event) {
+
+		try {
+
+			event.preventDefault();
+
+			const {
+				data,
+				error
+			} =
+				await supabase
+					.from("Crewmates")
+					.delete()
+					.eq("id", id);
+
+			if (error) {
+
+				throw error;
+
+			} // if
+
+			else {
+
+				alert("The Crewmate was removed!");
+
+			} // else
+
+		}  // try
+
+		catch (error) {
+
+			alert(error);
+
+		} // catch
+
+
+	} // deleteCrewmate()
+
+	//==============================================================
+
+
 	return (
 		<>
 			<SideBar />
@@ -629,6 +674,10 @@ function EditCrewmate() {
 								type="submit"
 							>
 								Edit Crewmate
+							</button>
+
+							<button type="button" onClick={deleteCrewmate}>
+								Delete Crewmate
 							</button>
 						</section>
 
