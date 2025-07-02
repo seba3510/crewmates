@@ -428,7 +428,16 @@ function EditCrewmate() {
 
 			else {
 
-				alert("The Crewmate was removed!");
+				const message =
+					"The crewmate was removed!";
+
+				alert(message);
+
+				setCrewmate({
+					name: "",
+					speed: "",
+					color: ""
+				});
 
 			} // else
 
@@ -676,7 +685,9 @@ function EditCrewmate() {
 								Edit Crewmate
 							</button>
 
-							<button type="button" onClick={deleteCrewmate}>
+							<button
+								type="button"
+								onClick={deleteCrewmate}>
 								Delete Crewmate
 							</button>
 						</section>
