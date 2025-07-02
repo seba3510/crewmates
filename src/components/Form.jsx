@@ -242,7 +242,7 @@ function Form() {
 
 				setCrewmate({
 					name: nameInput,
-					miles: milesInput,
+					speed: milesInput,
 					color: selectedColor
 				});
 
