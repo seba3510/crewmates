@@ -88,7 +88,7 @@ createRoot(root).render(
 				/>
 
 				<Route
-					path="/edit"
+					path="/edit/:id"
 					element={<EditCrewmate />}
 					errorElement={<ErrorPage />}
 				/>

@@ -1,3 +1,4 @@
+import { Link, useLocation } from "react-router-dom";
 import crewmate
 	from "../assets/images/crewmate.svg";
 
@@ -5,6 +6,7 @@ import crewmate
 
 function Card(
 	{
+		id,
 		name,
 		speed,
 		color
@@ -93,12 +95,18 @@ function Card(
 
 				</ul>
 
+
 				<section>
-					<button
-						type="button"
-						onClick={displayEditPage}>
-						Edit Crewmate
-					</button>
+
+					<Link to={`/edit/${id}`}>
+
+						<button
+							type="button"
+						>
+							Edit Crewmate
+						</button>
+
+					</Link>
 
 				</section>
 

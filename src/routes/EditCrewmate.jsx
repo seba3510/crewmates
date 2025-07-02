@@ -7,7 +7,8 @@ import crewmates from "../assets/images/home-page/Crewmates.png";
 //==============================================================
 
 import {
-	useState
+	useState,
+	useEffect
 } from "react";
 
 //==============================================================
@@ -22,12 +23,7 @@ import { supabase } from "../client.js";
 
 //==============================================================
 
-function EditCrewmate(
-	{
-		name,
-		speed,
-		color
-	}) {
+function EditCrewmate() {
 
 	const {
 		id
@@ -49,24 +45,54 @@ function EditCrewmate(
 
 	//==============================================================
 
-	function handleInputChange(event) {
+	async function fetchCrewmate() {
 
-		const {
-			name,
-			value
-		} = event.target;
+		try {
 
-		setCrewmate((prev) => {
-			return {
-				...prev,
-				[name]: value
-			}
-		});
+			const {
+				data,
+				error
+			} =
+				await supabase
+					.from("Crewmates")
+					.select()
+					.eq("id", id)
+					.single();
 
+			if (error) {
 
-	} // handleInputChange()
+				throw error;
+
+			} // if
+
+			else {
+
+				console.log(data);
+
+				setCrewmate(data);
+
+			} // else
+
+		} // try
+
+		catch (error) {
+
+			alert(error);
+
+		} // catch
+
+	} // fetchCrewmate()
 
 	//==============================================================
+
+	useEffect(() => {
+
+		fetchCrewmate();
+
+	}, [id]); // useEffect()
+
+	//==============================================================
+
 
 	return (
 		<>
@@ -92,7 +118,7 @@ function EditCrewmate(
 							</strong>
 
 							<span>
-								{name}
+								{crewmate.name}
 							</span>
 						</p>
 
@@ -102,7 +128,7 @@ function EditCrewmate(
 							</strong>
 
 							<span>
-								{speed}
+								{crewmate.speed}
 							</span>
 
 						</p>
@@ -112,6 +138,10 @@ function EditCrewmate(
 								Color:
 							</strong>
 						</p>
+
+						<span>
+							{crewmate.color}
+						</span>
 					</section>
 
 				</header>

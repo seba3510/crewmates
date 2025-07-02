@@ -27,6 +27,13 @@ import {
 
 //=================================================================
 
+import {
+	Link,
+	useLocation
+} from "react-router-dom";
+
+//=================================================================
+
 function CrewmateGallery({ gallery }) {
 
 	const [
@@ -36,6 +43,14 @@ function CrewmateGallery({ gallery }) {
 		useState([]);
 
 	//=================================================================
+
+	const {
+		id
+	} =
+		useLocation();
+
+	//=================================================================
+
 
 	async function fetchGallery() {
 
@@ -154,13 +169,13 @@ function CrewmateGallery({ gallery }) {
 					{(!isGalleryEmpty) && (
 
 						crewmates.map((crewmate) => (
-
 							<Card
-								key={crewmate.id}
+								id={crewmate.id}
 								name={crewmate.name}
 								speed={crewmate.speed}
 								color={crewmate.color}
 							/>
+
 
 						)) // map()
 
