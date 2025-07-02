@@ -126,7 +126,27 @@ function CrewmateGallery({ gallery }) {
 
 					{
 						((isGalleryEmpty)) &&
-						<h3>You haven't made a crewmate yet!</h3>
+						<>
+
+							<h3>You haven't made a crewmate yet!</h3>
+
+							<section
+								className="btn-container"
+							>
+
+								<button
+									type="button"
+									onClick={handleClick}
+								>
+									Create one here!
+								</button>
+
+							</section>
+
+						</>
+
+
+
 					}
 				</header>
 
@@ -148,18 +168,6 @@ function CrewmateGallery({ gallery }) {
 
 				</section>
 
-				<section
-					className="btn-container"
-				>
-
-					<button
-						type="button"
-						onClick={handleClick}
-					>
-						Create one here!
-					</button>
-
-				</section>
 			</main>
 
 		</>
