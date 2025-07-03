@@ -324,7 +324,7 @@ function CreateCrewmate() {
 
 		const message =
 			"The crewmate has " +
-			"been created!";
+			"been created.";
 
 		if (error) {
 

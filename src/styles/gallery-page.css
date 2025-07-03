@@ -46,16 +46,16 @@ input[type="radio"] {
 	position: absolute;
 	top: auto;
 	left: 50%;
+	width: 50%;
 }
 
 header > .btn-container {
+	all: unset;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	margin-top: 20em;
-}
-
-header > .btn-container > button {
-	width: 50vw;
+	margin-top: 5em;
+	width: 200px;
+	padding: 1em;
 }

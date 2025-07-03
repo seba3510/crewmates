@@ -121,10 +121,6 @@ function CrewmateGallery({ gallery }) {
 
 	//=================================================================
 
-
-	//=================================================================
-
-
 	return (
 
 		<>
@@ -141,18 +137,19 @@ function CrewmateGallery({ gallery }) {
 
 							<h3>You haven't made a crewmate yet!</h3>
 
-							<section
+							<div
 								className="btn-container"
 							>
 
 								<button
 									type="button"
 									onClick={handleClick}
+									id="create-btn"
 								>
 									Create one here!
 								</button>
 
-							</section>
+							</div>
 
 						</>
 
