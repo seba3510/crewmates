@@ -19,33 +19,6 @@ function Card(
 
 	//============================================================
 
-	function getFormattedSpeed(speed) {
-
-		const formatter =
-			new Intl.NumberFormat("en-us", {
-				style: "unit",
-				unit: "mile-per-hour",
-				unitDisplay: "short",
-				minimumFractionDigits: 1,
-				maximumFractionDigits: 2
-			});
-
-		const result =
-			formatter.format(
-				speed
-			);
-
-		return result;
-
-	} // getFormattedSpeed()
-
-	//============================================================
-
-	const formattedSpeed =
-		getFormattedSpeed(speed);
-
-	//============================================================
-
 	const isRainbow =
 		(color ===
 			"Rainbow");
@@ -97,7 +70,7 @@ function Card(
 						</strong>
 
 						<span>
-							{formattedSpeed}
+							{speed} mph
 						</span>
 
 					</li>

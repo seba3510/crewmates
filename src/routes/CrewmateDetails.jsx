@@ -123,6 +123,19 @@ function CrewmateDetails() {
 
 	//============================================================
 
+	function displayEditPage() {
+
+		const location =
+			`/edit/${id}`;
+
+		window.location =
+			location;
+
+	} // displayEditPage()
+
+	//============================================================
+
+
 	return (
 
 		<>
@@ -166,7 +179,9 @@ function CrewmateDetails() {
 					)}
 
 					<div className="container">
-						<button type="button">
+						<button
+							type="button"
+							onClick={displayEditPage}>
 							Wanna edit this Crewmate?
 						</button>
 					</div>
