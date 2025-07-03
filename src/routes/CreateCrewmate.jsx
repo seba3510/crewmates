@@ -92,7 +92,7 @@ function CreateCrewmate() {
 			);
 
 		const value =
-			parseFloat(
+			new Number(
 				string
 			);
 

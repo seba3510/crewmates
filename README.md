@@ -45,31 +45,44 @@ The following **additional** features are implemented:
 
 -   [x] The data of the form was validated using exception handling
 
--[x] The border of the card that displays the information of the crewmate,
-has a color that the "color" attribute.
+-   [x] The border of the card that displays the information of the crewmate,
+        has a color that the "color" attribute.
+
+    [x] Re-direct the user to the "Gallery" page when a record is removed.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img 
+src="./assets/images/Crewmates_Video_Walkthrough.gif" 
+title="Video Walkthrough" 
+width='' 
+alt="Video Walkthrough" />
 
 <!-- Replace this with whatever GIF tool you used! -->
 
-GIF created with ...
+GIF created with [ScreenToGif](https://www.screentogif.com/) for Windows
 
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
 ## Notes
 
 Describe any challenges encountered while building the app.
 
+-   **Styling each page**: To style each page, I used a different stylesheet. This lead to having the same names of class attributes,
+    or id attributes. This led to confusion, and also, I noticed that despite not styling a specific container of a page, if a previous
+    styled page had that exact same id or class attribute, the container would apply the style that was used in the other page.
+
+-   **How to implement the CRUD operations in React**: This was the hardest challenge of the project. I did not know when it was adequate to use a useEffect, because in the lab, some CRUD operation did not use useEffect.
+
+-   **Blank screen after removing a record**: AFter removing a record, an error was thrown with the message "[Object, Object]". To work around this, what I did was redirect the user to the "Gallery" page each time a record is removed.
+
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2025] [Sebastián L. Corporán Berríos]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

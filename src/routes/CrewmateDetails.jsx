@@ -32,6 +32,12 @@ import crewmatesImage
 
 //============================================================
 
+import {
+	getFormattedSpeed
+} from "./EditCrewmate.jsx";
+
+//============================================================
+
 function CrewmateDetails() {
 
 	const {
@@ -135,6 +141,12 @@ function CrewmateDetails() {
 
 	//============================================================
 
+	const formattedSpeed =
+		getFormattedSpeed(
+			crewmate.speed
+		);
+
+	//============================================================
 
 	return (
 
@@ -160,7 +172,7 @@ function CrewmateDetails() {
 						</h3>
 
 						<h3>
-							Speed: {crewmate.speed} mph
+							Speed: {formattedSpeed}
 						</h3>
 
 					</section>

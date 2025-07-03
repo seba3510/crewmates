@@ -10,7 +10,8 @@ import crewmates from "../assets/images/home-page/Crewmates.png";
 
 import {
 	useState,
-	useEffect
+	useEffect,
+	isValidElement
 } from "react";
 
 //==============================================================
@@ -125,15 +126,30 @@ function EditCrewmate() {
 				value
 			);
 
+		const isRangeValid =
+			(value >= 0);
+
+		let message = "";
+
 		if (!doesPatternMatch) {
 
-			const message =
+			message =
 				"The value must be " +
 				"a number.";
 
 			throw new TypeError(message);
 
 		} // if
+
+		else if (!isRangeValid) {
+
+			message =
+				"Please enter a " +
+				"valid speed value.";
+
+			throw new Error(message);
+
+		} // else if
 
 		return true;
 
@@ -374,6 +390,12 @@ function EditCrewmate() {
 
 			alert(message);
 
+			const location =
+				"/gallery";
+
+			window.location =
+				location;
+
 		} // else
 
 	} // checkError()
@@ -460,6 +482,13 @@ function EditCrewmate() {
 					speed: "",
 					color: ""
 				});
+
+
+				const location =
+					"/gallery";
+
+				window.location =
+					location;
 
 			} // else
 
