@@ -81,25 +81,46 @@ function CreateCrewmate() {
 		const pattern =
 			/([0-9]+)/;
 
-		const value =
+		const string =
 			speed
 				.value
 				.trim();
 
 		const doesPatternMatch =
 			pattern.test(
-				value
+				string
 			);
+
+		const value =
+			parseFloat(
+				string
+			);
+
+		const isRangeValid =
+			(value >= 0);
+
+		let message = "";
 
 		if (!doesPatternMatch) {
 
-			const message =
+			message =
 				"The value must be " +
 				"a number.";
 
 			throw new TypeError(message);
 
 		} // if
+
+		else if (!isRangeValid) {
+
+			message =
+				"Please enter a " +
+				"valid speed value.";
+
+			throw new RangeError(message);
+
+		} // else if
+
 
 		return true;
 
@@ -114,10 +135,10 @@ function CreateCrewmate() {
 				.value
 				.trim();
 
-		const isValid =
+		const isPresent =
 			(value !== "");
 
-		if (!isValid) {
+		if (!isPresent) {
 
 			const message =
 				"Please enter the name " +
@@ -285,10 +306,7 @@ function CreateCrewmate() {
 
 		catch (error) {
 
-			const message =
-				error.message;
-
-			alert(message);
+			alert(error);
 
 		} // catch
 
