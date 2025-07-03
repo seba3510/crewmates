@@ -44,9 +44,18 @@ import {
 
 //=================================================================================
 
-import { EditCrewmate } from "./routes/EditCrewmate.jsx";
+import {
+	EditCrewmate
+} from "./routes/EditCrewmate.jsx";
 
 //=================================================================================
+
+import {
+	CrewmateDetails
+} from "./routes/CrewmateDetails.jsx";
+
+//=================================================================================
+
 
 const crewmates = [];
 
@@ -91,6 +100,11 @@ createRoot(root).render(
 					path="/edit/:id"
 					element={<EditCrewmate />}
 					errorElement={<ErrorPage />}
+				/>
+
+				<Route
+					path="/details"
+					element={<CrewmateDetails />}
 				/>
 
 

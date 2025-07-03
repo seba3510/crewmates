@@ -169,12 +169,17 @@ function CrewmateGallery({ gallery }) {
 					{(!isGalleryEmpty) && (
 
 						crewmates.map((crewmate) => (
-							<Card
-								id={crewmate.id}
-								name={crewmate.name}
-								speed={crewmate.speed}
-								color={crewmate.color}
-							/>
+
+							<Link to={`/details`}>
+
+								<Card
+									id={crewmate.id}
+									name={crewmate.name}
+									speed={crewmate.speed}
+									color={crewmate.color}
+								/>
+
+							</Link>
 
 
 						)) // map()
