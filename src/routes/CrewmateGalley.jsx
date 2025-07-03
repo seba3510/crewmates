@@ -55,7 +55,7 @@ function CrewmateGallery({ gallery }) {
 				await supabase
 					.from("Crewmates")
 					.select("*")
-					.order("name", {
+					.order("created_at", {
 						ascending: true
 					});
 
