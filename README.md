@@ -48,7 +48,7 @@ The following **additional** features are implemented:
 -   [x] The border of the card that displays the information of the crewmate,
         has a color that the "color" attribute.
 
-    [x] Re-direct the user to the "Gallery" page when a record is removed.
+-   [x] Re-direct the user to the "Gallery" page when a record is removed.
 
 ## Video Walkthrough
 
