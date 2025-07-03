@@ -11,11 +11,6 @@ import {
 
 function SideBar() {
 
-	const sum = 3 + 2;
-
-	console.log(sum);
-
-
 	return (
 
 		<section id="sidebar">
@@ -56,14 +51,12 @@ function SideBar() {
 				/>
 			</div>
 
-
-
 		</section>
+
 	);
 
 } // SideBar()
 
 //===================================================================================
-
 
 export { SideBar };

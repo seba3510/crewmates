@@ -8,11 +8,13 @@ import {
 
 //===================================================================================
 
-import crewmatesImage from "./assets/images/home-page/Crewmates.png";
+import crewmatesImage
+	from "./assets/images/home-page/Crewmates.png";
 
 //===================================================================================
 
-import spaceship from "./assets/images/home-page/Spaceship.webp"
+import spaceship
+	from "./assets/images/home-page/Spaceship.webp"
 
 //===================================================================================
 

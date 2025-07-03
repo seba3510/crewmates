@@ -107,8 +107,6 @@ createRoot(root).render(
 					element={<CrewmateDetails />}
 				/>
 
-
-
 			</Routes>
 
 		</BrowserRouter>

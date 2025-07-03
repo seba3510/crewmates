@@ -487,10 +487,10 @@ function EditCrewmate() {
 				<header>
 					<h1>Edit Your Crewmate</h1>
 
-					<section className="image-container">
+					<div className="image-container">
 
 						<img src={crewmates} alt="Crewmates" />
-					</section>
+					</div>
 
 					<section id="info-container">
 						<h3>Current Crewmate Info:</h3>
@@ -540,7 +540,7 @@ function EditCrewmate() {
 									Name
 								</label>
 
-								<section className="form-control">
+								<div className="form-control">
 
 									<input
 										type="text"
@@ -550,7 +550,7 @@ function EditCrewmate() {
 										onChange={handleInputChange}
 									/>
 
-								</section>
+								</div>
 
 							</section>
 
@@ -560,7 +560,7 @@ function EditCrewmate() {
 									Speed (mph)
 								</label>
 
-								<section className="form-control">
+								<div className="form-control">
 
 									<input
 										type="text"
@@ -570,7 +570,7 @@ function EditCrewmate() {
 										onChange={handleInputChange}
 									/>
 
-								</section>
+								</div>
 
 							</section>
 
@@ -580,7 +580,7 @@ function EditCrewmate() {
 
 									<legend>Color</legend>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -592,9 +592,9 @@ function EditCrewmate() {
 										<label htmlFor="red">
 											Red
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -607,9 +607,9 @@ function EditCrewmate() {
 											Green
 										</label>
 
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -621,9 +621,9 @@ function EditCrewmate() {
 										<label htmlFor="blue">
 											Blue
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -635,9 +635,9 @@ function EditCrewmate() {
 										<label htmlFor="purple">
 											Purple
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -649,9 +649,9 @@ function EditCrewmate() {
 										<label htmlFor="yellow">
 											Yellow
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -663,9 +663,9 @@ function EditCrewmate() {
 										<label htmlFor="orange">
 											Orange
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -677,9 +677,9 @@ function EditCrewmate() {
 										<label htmlFor="pink">
 											Pink
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -691,7 +691,7 @@ function EditCrewmate() {
 										<label htmlFor="rainbow">
 											Rainbow
 										</label>
-									</section>
+									</div>
 
 								</fieldset>
 
@@ -699,7 +699,7 @@ function EditCrewmate() {
 						</section>
 
 
-						<section
+						<div
 							className="btn-container">
 							<button
 								type="submit"
@@ -712,7 +712,7 @@ function EditCrewmate() {
 								onClick={deleteCrewmate}>
 								Delete Crewmate
 							</button>
-						</section>
+						</div>
 
 					</form>
 
@@ -722,6 +722,7 @@ function EditCrewmate() {
 
 		</>
 	);
+
 } // EditCrewmate()
 
 //==============================================================

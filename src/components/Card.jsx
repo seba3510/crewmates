@@ -88,7 +88,7 @@ function Card(
 				</ul>
 
 
-				<section>
+				<div>
 
 					<Link to={`/edit/${id}`}>
 
@@ -100,7 +100,7 @@ function Card(
 
 					</Link>
 
-				</section>
+				</div>
 
 			</section>
 		</>

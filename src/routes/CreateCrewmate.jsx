@@ -349,14 +349,14 @@ function CreateCrewmate() {
 				<header>
 					<h1>Create a New Crewmate</h1>
 
-					<section className="image-container">
+					<div className="image-container">
 
 						<img
 							src={crewmates}
 							alt="Crewmates"
 						/>
 
-					</section>
+					</div>
 
 				</header>
 
@@ -371,7 +371,7 @@ function CreateCrewmate() {
 									Name
 								</label>
 
-								<section
+								<div
 									className="form-control"
 								>
 
@@ -383,7 +383,7 @@ function CreateCrewmate() {
 										onChange={handleInputChange}
 									/>
 
-								</section>
+								</div>
 
 							</section>
 
@@ -393,7 +393,7 @@ function CreateCrewmate() {
 									Speed (mph)
 								</label>
 
-								<section className="form-control">
+								<div className="form-control">
 
 									<input
 										type="text"
@@ -403,7 +403,7 @@ function CreateCrewmate() {
 										onChange={handleInputChange}
 									/>
 
-								</section>
+								</div>
 
 							</section>
 
@@ -413,7 +413,7 @@ function CreateCrewmate() {
 
 									<legend>Color</legend>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -425,9 +425,9 @@ function CreateCrewmate() {
 										<label htmlFor="red">
 											Red
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -440,9 +440,9 @@ function CreateCrewmate() {
 											Green
 										</label>
 
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -454,9 +454,9 @@ function CreateCrewmate() {
 										<label htmlFor="blue">
 											Blue
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -468,9 +468,9 @@ function CreateCrewmate() {
 										<label htmlFor="purple">
 											Purple
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -482,9 +482,9 @@ function CreateCrewmate() {
 										<label htmlFor="yellow">
 											Yellow
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -496,9 +496,9 @@ function CreateCrewmate() {
 										<label htmlFor="orange">
 											Orange
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -510,9 +510,9 @@ function CreateCrewmate() {
 										<label htmlFor="pink">
 											Pink
 										</label>
-									</section>
+									</div>
 
-									<section className="form-control">
+									<div className="form-control">
 										<input
 											type="radio"
 											name="crewmate_color"
@@ -524,7 +524,7 @@ function CreateCrewmate() {
 										<label htmlFor="rainbow">
 											Rainbow
 										</label>
-									</section>
+									</div>
 
 								</fieldset>
 
@@ -532,14 +532,14 @@ function CreateCrewmate() {
 						</section>
 
 
-						<section
+						<div
 							className="form-control">
 							<button
 								type="submit"
 							>
 								Create Crewmate
 							</button>
-						</section>
+						</div>
 
 					</form>
 

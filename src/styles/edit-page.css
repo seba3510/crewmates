@@ -11,5 +11,13 @@ main > header {
 	justify-content: center;
 	align-items: center;
 	gap: 50px;
-	padding: 2em;
+}
+
+#info-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5em;
+	gap: 5px;
 }
