@@ -1,4 +1,9 @@
-import { Link, useLocation } from "react-router-dom";
+import {
+	Link
+} from "react-router-dom";
+
+//============================================================
+
 import crewmate
 	from "../assets/images/crewmate.svg";
 
@@ -14,18 +19,32 @@ function Card(
 
 	//============================================================
 
-	function displayEditPage() {
+	function getFormattedSpeed(speed) {
 
-		const location =
-			"/edit";
+		const formatter =
+			new Intl.NumberFormat("en-us", {
+				style: "unit",
+				unit: "mile-per-hour",
+				unitDisplay: "short",
+				minimumFractionDigits: 1,
+				maximumFractionDigits: 2
+			});
 
-		window.location =
-			location;
+		const result =
+			formatter.format(
+				speed
+			);
 
-	} // displayEditPage()
+		return result;
+
+	} // getFormattedSpeed()
 
 	//============================================================
 
+	const formattedSpeed =
+		getFormattedSpeed(speed);
+
+	//============================================================
 
 	const isRainbow =
 		(color ===
@@ -78,7 +97,7 @@ function Card(
 						</strong>
 
 						<span>
-							{speed}
+							{formattedSpeed}
 						</span>
 
 					</li>

@@ -36,7 +36,6 @@ function EditCrewmate() {
 
 	//==============================================================
 
-
 	const [
 		crewmate,
 		setCrewmate
@@ -280,8 +279,6 @@ function EditCrewmate() {
 							color: selectedColor,
 						}).eq("id", id);
 
-				console.log('Supabase Response: ', data, error); // Add this log
-
 				checkError(
 					data,
 					error
@@ -367,7 +364,7 @@ function EditCrewmate() {
 			} =
 				await supabase
 					.from("Crewmates")
-					.select()
+					.select("*")
 					.eq("id", id)
 					.single();
 
@@ -412,7 +409,6 @@ function EditCrewmate() {
 			event.preventDefault();
 
 			const {
-				data,
 				error
 			} =
 				await supabase
@@ -449,11 +445,38 @@ function EditCrewmate() {
 
 		} // catch
 
-
 	} // deleteCrewmate()
 
 	//==============================================================
 
+	function getFormattedSpeed(speed) {
+
+		const formatter =
+			new Intl.NumberFormat("en-us", {
+				style: "unit",
+				unit: "mile-per-hour",
+				unitDisplay: "short",
+				minimumFractionDigits: 1,
+				maximumFractionDigits: 2
+			});
+
+		const result =
+			formatter.format(
+				speed
+			);
+
+		return result;
+
+	} // getFormattedSpeed()
+
+	//==============================================================
+
+	const formattedSpeed =
+		getFormattedSpeed(
+			crewmate.speed
+		);
+
+	//==============================================================
 
 	return (
 		<>
@@ -463,7 +486,6 @@ function EditCrewmate() {
 
 				<header>
 					<h1>Edit Your Crewmate</h1>
-
 
 					<section className="image-container">
 
@@ -489,7 +511,7 @@ function EditCrewmate() {
 							</strong>
 
 							<span>
-								{crewmate.speed}
+								{formattedSpeed}
 							</span>
 
 						</p>

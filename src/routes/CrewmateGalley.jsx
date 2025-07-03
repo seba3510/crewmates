@@ -44,14 +44,6 @@ function CrewmateGallery({ gallery }) {
 
 	//=================================================================
 
-	const {
-		id
-	} =
-		useLocation();
-
-	//=================================================================
-
-
 	async function fetchGallery() {
 
 		try {
@@ -62,7 +54,7 @@ function CrewmateGallery({ gallery }) {
 			} =
 				await supabase
 					.from("Crewmates")
-					.select()
+					.select("*")
 					.order("name", {
 						ascending: true
 					});
@@ -129,6 +121,10 @@ function CrewmateGallery({ gallery }) {
 
 	//=================================================================
 
+
+	//=================================================================
+
+
 	return (
 
 		<>
@@ -160,8 +156,6 @@ function CrewmateGallery({ gallery }) {
 
 						</>
 
-
-
 					}
 				</header>
 
@@ -170,7 +164,8 @@ function CrewmateGallery({ gallery }) {
 
 						crewmates.map((crewmate) => (
 
-							<Link to={`/details`}>
+							<Link to={`/details/${crewmate.id}`}
+								key={crewmate.id}>
 
 								<Card
 									id={crewmate.id}

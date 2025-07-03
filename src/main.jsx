@@ -103,7 +103,7 @@ createRoot(root).render(
 				/>
 
 				<Route
-					path="/details"
+					path="/details/:id"
 					element={<CrewmateDetails />}
 				/>
 
