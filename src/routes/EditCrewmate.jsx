@@ -1,4 +1,6 @@
-import { SideBar } from "../components/SideBar.jsx";
+import {
+	SideBar
+} from "../components/SideBar.jsx";
 
 //==============================================================
 
@@ -19,11 +21,35 @@ import {
 
 //==============================================================
 
-import { supabase } from "../client.js";
+import {
+	supabase
+} from "../client.js";
 
 //==============================================================
 
 import "../styles/edit-page.css";
+
+//==============================================================
+
+function getFormattedSpeed(speed) {
+
+	const formatter =
+		new Intl.NumberFormat("en-us", {
+			style: "unit",
+			unit: "mile-per-hour",
+			unitDisplay: "short",
+			minimumFractionDigits: 1,
+			maximumFractionDigits: 2
+		});
+
+	const result =
+		formatter.format(
+			speed
+		);
+
+	return result;
+
+} // getFormattedSpeed()
 
 //==============================================================
 
@@ -425,7 +451,7 @@ function EditCrewmate() {
 			else {
 
 				const message =
-					"The crewmate was removed!";
+					"The crewmate was removed.";
 
 				alert(message);
 
@@ -446,28 +472,6 @@ function EditCrewmate() {
 		} // catch
 
 	} // deleteCrewmate()
-
-	//==============================================================
-
-	function getFormattedSpeed(speed) {
-
-		const formatter =
-			new Intl.NumberFormat("en-us", {
-				style: "unit",
-				unit: "mile-per-hour",
-				unitDisplay: "short",
-				minimumFractionDigits: 1,
-				maximumFractionDigits: 2
-			});
-
-		const result =
-			formatter.format(
-				speed
-			);
-
-		return result;
-
-	} // getFormattedSpeed()
 
 	//==============================================================
 
@@ -727,4 +731,7 @@ function EditCrewmate() {
 
 //==============================================================
 
-export { EditCrewmate };
+export {
+	EditCrewmate,
+	getFormattedSpeed
+};

@@ -161,7 +161,8 @@ function CrewmateGallery({ gallery }) {
 						crewmates.map((crewmate) => (
 
 
-							<Link to={`/details/${crewmate.id}`}
+							<Link
+								to={`/details/${crewmate.id}`}
 								key={crewmate.id}
 								style={{ textDecoration: "none" }}>
 

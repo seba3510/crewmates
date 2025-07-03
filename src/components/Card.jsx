@@ -9,6 +9,12 @@ import crewmate
 
 //============================================================
 
+import {
+	getFormattedSpeed
+} from "../routes/EditCrewmate.jsx";
+
+//============================================================
+
 function Card(
 	{
 		id,
@@ -22,6 +28,13 @@ function Card(
 	const isRainbow =
 		(color ===
 			"Rainbow");
+
+	//============================================================
+
+	const formattedSpeed =
+		getFormattedSpeed(
+			speed
+		);
 
 	//============================================================
 
@@ -70,7 +83,7 @@ function Card(
 						</strong>
 
 						<span>
-							{speed} mph
+							{formattedSpeed}
 						</span>
 
 					</li>

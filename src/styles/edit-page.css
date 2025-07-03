@@ -6,6 +6,7 @@ main > header {
 }
 
 .btn-container {
+	all: unset;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
