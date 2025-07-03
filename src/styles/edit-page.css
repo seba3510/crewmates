@@ -11,7 +11,5 @@ main > header {
 	justify-content: center;
 	align-items: center;
 	gap: 50px;
-	/* border: 5px solid blue; */
-	/* width: 12%; */
 	padding: 2em;
 }

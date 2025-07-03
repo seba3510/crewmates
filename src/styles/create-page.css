@@ -1,13 +1,15 @@
 :root {
 	--card-background-color: #5b5a5a;
 	--card-border: 5px solid var(--card-background-color);
+	--card-display: flex;
+	--card-align-items: center;
 }
 
 main header {
-	display: flex;
+	display: var(--card-display);
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: var(--card-align-items);
 	margin-top: 1em;
 }
 
@@ -16,25 +18,24 @@ header > .image-container > img {
 }
 
 #form-container {
-	/* border: 5px solid blue; */
 	padding: 2em;
 }
 
 #cards {
-	display: flex;
+	display: var(--card-display);
 	flex-direction: row;
 	justify-content: space-evenly;
-	align-items: center;
-	/* border: 3px solid red; */
+	align-items: var(--card-align-items);
 	padding: 2em auto 2em auto;
 	height: 500px;
+	padding-bottom: 2em;
 }
 
 .card {
-	display: flex;
+	display: var(--card-display);
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: var(--card-align-items);
 	background-color: var(--card-background-color);
 	border: var(--card-border);
 	-webkit-border-radius: 13px;
@@ -44,7 +45,6 @@ header > .image-container > img {
 	min-height: 200px;
 	max-height: 50%;
 	padding: 1em;
-	border: 4px solid red;
 }
 
 #speed {
@@ -59,19 +59,10 @@ header > .image-container > img {
 
 .card:nth-child(3n - 1) > .form-control,
 .card:nth-child(3n - 2) > .form-control {
-	display: flex;
+	display: var(--card-display);
 	flex-direction: row;
 	justify-content: center;
-	align-items: center;
-}
-
-.btn-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	padding: 1em 0.5em;
-	width: 12%;
+	align-items: var(--card-align-items);
 }
 
 button {
@@ -95,4 +86,12 @@ legend {
 fieldset {
 	min-width: 130px;
 	max-width: 25%;
+}
+
+form > .form-control:last-child {
+	display: var(--card-display);
+	flex-direction: row;
+	justify-content: center;
+	align-items: var(--card-align-items);
+	margin-top: 1em;
 }

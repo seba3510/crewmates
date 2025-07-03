@@ -14,19 +14,18 @@ import crewmates
 //===================================================================================
 
 import {
-	Form
-} from "../components/Form.jsx";
-
-//===================================================================================
-
-import {
 	useState
 } from "react";
 
 //===================================================================================
 
-function CreateCrewmate() {
+import {
+	supabase
+} from "../client.js";
 
+//===================================================================================
+
+function CreateCrewmate() {
 
 	const [
 		crewmate,
@@ -372,7 +371,9 @@ function CreateCrewmate() {
 									Name
 								</label>
 
-								<section className="form-control">
+								<section
+									className="form-control"
+								>
 
 									<input
 										type="text"
@@ -532,7 +533,7 @@ function CreateCrewmate() {
 
 
 						<section
-							className="btn-container">
+							className="form-control">
 							<button
 								type="submit"
 							>

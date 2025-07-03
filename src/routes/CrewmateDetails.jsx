@@ -23,6 +23,15 @@ import {
 
 //============================================================
 
+import "../styles/details-page.css";
+
+//============================================================
+
+import crewmatesImage
+	from "../assets/images/Crewmates_Discussion.png";
+
+//============================================================
+
 function CrewmateDetails() {
 
 	const {
@@ -95,33 +104,22 @@ function CrewmateDetails() {
 
 	//============================================================
 
-	function getFormattedSpeed(speed) {
-
-		const formatter =
-			new Intl.NumberFormat("en-US", {
-				style: "unit",
-				unit: "mile-per-hour",
-				unitDisplay: "short",
-				minimumFractionDigits: 1,
-				maximumFractionDigits: 2
-			});
-
-		const result =
-			formatter.format(
-				speed
-			);
-
-		return result;
-
-	} // getFormattedSpeed()
-
+	const isSpeedFast =
+		(crewmate.speed
+			>= parseFloat(20));
 
 	//============================================================
 
-	const formattedSpeed =
-		getFormattedSpeed(
-			crewmate.speed
-		);
+	const slowMessage =
+		"You may want to find a " +
+		"Crewmate with more speed. " +
+		"This one is kind of slow 😬";
+
+	//============================================================
+
+	const fastMessage =
+		"Your crewmate is " +
+		"really fast!";
 
 	//============================================================
 
@@ -138,10 +136,10 @@ function CrewmateDetails() {
 						Crewmate:  {crewmate.name}
 					</h1>
 
-					<section id="stats-container">
+					<section id="stats">
 
 						<h2>
-							Stats:
+							Stats
 						</h2>
 
 						<h3>
@@ -149,11 +147,37 @@ function CrewmateDetails() {
 						</h3>
 
 						<h3>
-							Speed: {formattedSpeed}
+							Speed: {crewmate.speed} mph
 						</h3>
 
 					</section>
+
 				</header>
+
+				<section id="details">
+					{(isSpeedFast) ? (
+						<p>
+							{fastMessage}
+						</p>
+					) : (
+						<p>
+							{slowMessage}
+						</p>
+					)}
+
+					<div className="container">
+						<button type="button">
+							Wanna edit this Crewmate?
+						</button>
+					</div>
+
+					<div className="container">
+						<img
+							src={crewmatesImage}
+							alt="Crewmates arguing over who is the imposter"
+						/>
+					</div>
+				</section>
 
 			</main>
 		</>

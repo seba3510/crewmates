@@ -87,11 +87,12 @@ main > header > p {
 }
 
 header > .image-container:nth-child(odd) {
-	width: 50%;
+	width: 30%;
+	margin-top: 3em;
 }
 
 header > .image-container:nth-child(even) {
-	width: 50%;
+	width: 60%;
 	margin-top: 5em;
 }
 

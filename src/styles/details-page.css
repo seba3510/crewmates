@@ -1,6 +1,45 @@
+:root {
+	--container-display: flex;
+	--container-justify-content: center;
+	--container-align-items: center;
+}
+
 main > header {
-	display: flex;
+	display: var(--container-display);
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	justify-content: var(--container-justify-content);
+	align-items: var(--container-align-items);
+}
+
+#stats {
+	display: inherit;
+	flex-direction: inherit;
+	justify-content: inherit;
+	align-items: inherit;
+	gap: 10px;
+}
+
+#details {
+	display: var(--container-display);
+	flex-direction: column;
+	justify-content: var(--container-justify-content);
+	align-items: var(--container-align-items);
+	gap: 20px;
+	margin-top: 5em;
+	padding: 1em;
+}
+
+.container {
+	display: var(--container-display);
+	flex-direction: row;
+	justify-content: var(--container-justify-content);
+	align-items: var(--container-align-items);
+}
+
+#details img {
+	width: 30%;
+}
+
+#details p {
+	font-size: 1.6em;
 }
