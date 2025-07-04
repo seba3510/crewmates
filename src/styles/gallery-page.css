@@ -1,3 +1,6 @@
+main {
+	overflow: scroll;
+}
 main > header {
 	display: flex;
 	flex-direction: column;
