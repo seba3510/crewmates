@@ -221,30 +221,30 @@ function CreateCrewmate() {
 
 			event.preventDefault();
 
-			const target =
+			const form =
 				event.target;
 
 			const colors =
 				[
-					target[3],
-					target[4],
-					target[5],
-					target[6],
-					target[7],
-					target[8],
-					target[9],
-					target[10]
+					form[3],
+					form[4],
+					form[5],
+					form[6],
+					form[7],
+					form[8],
+					form[9],
+					form[10]
 				];
 
 			const isNameValid = (
 				checkName(
-					target[0]
+					form[0]
 				)
 			);
 
 			const isSpeedValid = (
 				checkSpeed(
-					target[1]
+					form[1]
 				)
 			);
 
@@ -262,11 +262,11 @@ function CreateCrewmate() {
 			if (isDataValid) {
 
 				let nameInput =
-					target[0].value.trim();
+					form[0].value.trim();
 
 				let milesInput =
 					parseFloat(
-						target[1].value
+						form[1].value
 					);
 
 				let selectedColor =
@@ -296,7 +296,7 @@ function CreateCrewmate() {
 				);
 
 				clearForm(
-					target,
+					form,
 					colors
 				);
 
@@ -314,11 +314,11 @@ function CreateCrewmate() {
 
 	//===================================================================================
 
-	function clearForm(target, colors) {
+	function clearForm(form, colors) {
 
-		target[0].value = "";
+		form[0].value = "";
 
-		target[1].value = "";
+		form[1].value = "";
 
 		colors.forEach((color) => {
 
